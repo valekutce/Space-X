@@ -39,7 +39,8 @@ dd {
 /* Выставляем основные настройки по-умолчанию для body */
 body {
   font-family: 'Roboto', sans-serif;
-  background: var(--main-fon-body);
+  background-color: var(--main-fon-body);
+  background-size: cover;
   font-size: 16px;
   min-height: 100vh;
   scroll-behavior: smooth;
@@ -85,6 +86,10 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+.body_active {
+  background: var(--main-fon-body) url(../img/image-removebg-preview.png) no-repeat center;
+ background-size: contain;
 }
 ::-webkit-scrollbar {
   width: 5px;
@@ -534,9 +539,43 @@ select {
 
 /* Footer style start */ 
 
+@keyframes footers {
+  0% {
+    background:linear-gradient(220deg, rgba(0, 0, 0,0.8) 75%, rgba(255, 255, 255,0) 100%), url(../img/main-img/22.png) no-repeat 94% center;
+    background-size: 50%;
+  }
+  10% {
+    background:linear-gradient(230deg, rgba(0, 0, 0,0.8) 70%, rgba(255, 255, 255,0) 100%), url(../img/main-img/22.png) no-repeat 94% center;
+    background-size: 50%;
+  }
+  20%, 80%{
+    background:linear-gradient(240deg, rgba(0, 0, 0,0.8) 65%, rgba(255, 255, 255,0) 100%), url(../img/main-img/22.png) no-repeat 94% center;
+    background-size: 50%;
+  }
+  30%, 70% {
+    background:linear-gradient(250deg, rgba(0, 0, 0,0.8) 60%, rgba(255, 255, 255,0) 100%), url(../img/main-img/22.png) no-repeat 94% center;
+    background-size: 50%;
+  }
+  40%, 60% {
+    background:linear-gradient(260deg, rgba(0, 0, 0,0.8) 55%, rgba(255, 255, 255,0) 100%), url(../img/main-img/22.png) no-repeat 94% center;
+    background-size: 50%;
+  }
+  50% {
+    background:linear-gradient(275deg, rgba(0, 0, 0,0.8) 50%, rgba(255, 255, 255,0) 100%), url(../img/main-img/22.png) no-repeat 94% center;
+    background-size: 50%;
+  }
+  100% {
+    background:linear-gradient(230deg, rgba(0, 0, 0,0.8) 70%, rgba(255, 255, 255,0) 100%), url(../img/main-img/22.png) no-repeat 94% center;
+    background-size: 50%;
+  }
+}
+
 .footer {
   width: 100%;
   padding: 183px 15px 130px;
+  background:linear-gradient(220deg, rgba(0, 0, 0,0.8) 75%, rgba(255, 255, 255,0) 100%), url(../img/main-img/22.png) no-repeat 94% center;
+  background-size: 50%;
+  animation: footers 20000ms infinite cubic-bezier(.17,.67,.83,.67);
 }
 .footer_wrap {
   width: 544px;
