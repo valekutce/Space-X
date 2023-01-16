@@ -12,8 +12,18 @@
         setTimeout(()=> {
             backdrop.classList.remove('backdrop_active'); 
             backdrop.classList.remove('backdrop_start');
-        }, 6800);
+        }, 8200);
     });
+
+    function startInt() {
+        backdrop.classList.add('backdrop_active'); 
+        backdrop.classList.add('backdrop_start');
+        setTimeout(()=> {
+            backdrop.classList.remove('backdrop_active'); 
+            backdrop.classList.remove('backdrop_start');
+        }, 8200);
+    }
+    let remSetInt = setInterval(startInt, 20000);
 
     mobileLinks.forEach(mobileLink => {
         mobileLink.addEventListener('click', () => {
@@ -41,11 +51,13 @@
         headerWrap.classList.add('header_wrap_active');
         backdrop.classList.add('backdrop_active');
         burg.style.display = 'none';
+        clearInterval(remSetInt);
     });
 
     clockMenu.addEventListener('click', () => {
         headerWrap.classList.remove('header_wrap_active');
         backdrop.classList.remove('backdrop_active');
         burg.style.display = 'block';
+        remSetInt = setInterval(startInt, 20000);
     });
     
