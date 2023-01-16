@@ -256,6 +256,8 @@ select {
     &_active {
       left: 0;
       z-index: 100;
+      flex-wrap: nowrap;
+      overflow: auto;
     }
   }
   .header_nav ul.nav-items {
@@ -318,6 +320,16 @@ select {
     background: url(../img/pngwing.com.png) no-repeat -180px center;
   }
 }
+@keyframes backdropOpacity {
+  0% {
+    opacity: 1;
+    background-position: -140px bottom;
+  }
+  100% {
+    opacity: 0;
+    background: url(../img/pngwing.com.png) no-repeat -180px center;
+  }
+}
 .backdrop {
   position: fixed;
   top: 0;
@@ -325,13 +337,18 @@ select {
   bottom: 0;
   right: 0;
   background: rgba(0,0,0,0.8) url(../img/pngwing.com.png) no-repeat -140px top;
-  // background-size: cover;
   transform: scale(0);
-  transition: all .3s;
+  opacity: 0;
+  transition:opacity all 20s;
   &_active {
     transform: scale(1);
+    opacity: 1;
     z-index: 10;
     animation: backdrop 300s infinite;
+  }
+  &_start {
+    animation: backdropOpacity 10000ms;
+    transform: scale(1);
   }
 }
 

@@ -293,6 +293,9 @@ select {
   .header_wrap_active {
     left: 0;
     z-index: 100;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow: auto;
   }
   .header_nav ul.nav-items {
     -webkit-box-orient: vertical;
@@ -372,6 +375,26 @@ select {
     background: url(../img/pngwing.com.png) no-repeat -180px center;
   }
 }
+@-webkit-keyframes backdropOpacity {
+  0% {
+    opacity: 1;
+    background-position: -140px bottom;
+  }
+  100% {
+    opacity: 0;
+    background: url(../img/pngwing.com.png) no-repeat -180px center;
+  }
+}
+@keyframes backdropOpacity {
+  0% {
+    opacity: 1;
+    background-position: -140px bottom;
+  }
+  100% {
+    opacity: 0;
+    background: url(../img/pngwing.com.png) no-repeat -180px center;
+  }
+}
 .backdrop {
   position: fixed;
   top: 0;
@@ -381,15 +404,23 @@ select {
   background: rgba(0, 0, 0, 0.8) url(../img/pngwing.com.png) no-repeat -140px top;
   -webkit-transform: scale(0);
           transform: scale(0);
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  opacity: 0;
+  -webkit-transition: opacity all 20s;
+  transition: opacity all 20s;
 }
 .backdrop_active {
   -webkit-transform: scale(1);
           transform: scale(1);
+  opacity: 1;
   z-index: 10;
   -webkit-animation: backdrop 300s infinite;
           animation: backdrop 300s infinite;
+}
+.backdrop_start {
+  -webkit-animation: backdropOpacity 10000ms;
+          animation: backdropOpacity 10000ms;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 /* Header style end */
