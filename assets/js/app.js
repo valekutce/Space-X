@@ -16,9 +16,11 @@
 
     mobileLinks.forEach(mobileLink => {
         mobileLink.addEventListener('click', () => {
-            headerWrap.classList.remove('header_wrap_active');
-            backdrop.classList.remove('backdrop_active');
-            burg.style.display = 'block';
+            if (document.documentElement.clientWidth <= 768) {
+                headerWrap.classList.remove('header_wrap_active');
+                backdrop.classList.remove('backdrop_active');
+                burg.style.display = 'block';
+            }
         });
     });
 
