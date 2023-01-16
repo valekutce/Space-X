@@ -131,8 +131,8 @@ select {
   position: relative;
   width: 100%;
   padding: 53px 15px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 .header_active {
   position: fixed;
