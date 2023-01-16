@@ -152,8 +152,8 @@ select {
 }
 .header_wrap .clock-menu {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0px;
+  right: 0px;
   width: 50px;
   height: 50px;
   color: #ffffff;
@@ -469,6 +469,11 @@ select {
     padding: 20px 15px 32px;
   }
 }
+@media (max-width: 320px) {
+  .home-block {
+    padding: 90px 15px 32px;
+  }
+}
 /* Main screen end */
 /* Section Main Img start */
 .main-img {
@@ -487,6 +492,11 @@ select {
 @media (max-width: 425px) {
   .main-img {
     height: 450px;
+  }
+}
+@media (max-width: 320px) {
+  .main-img {
+    height: 390px;
   }
 }
 /* Section Main Img end */
