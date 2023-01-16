@@ -281,6 +281,8 @@ select {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
     background: var(--main-fon-body);
     padding: 40px;
     -webkit-transition: left 0.3s;
@@ -293,8 +295,6 @@ select {
   .header_wrap_active {
     left: 0;
     z-index: 100;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
     overflow: auto;
   }
   .header_nav ul.nav-items {
@@ -322,6 +322,14 @@ select {
     margin-bottom: 40px;
   }
 }
+@media (max-width: 768px) and (max-height: 425px) {
+  .header_nav li.menu-item {
+    margin-bottom: 23px;
+  }
+  .header_nav ul.nav-items li.menu-item a {
+    font-size: 25px;
+  }
+}
 @media (max-width: 425px) {
   .header_nav ul.nav-items li.menu-item a {
     font-size: 25px;
@@ -343,56 +351,56 @@ select {
 }
 @-webkit-keyframes backdrop {
   0% {
-    background-position: -140px bottom;
+    background-position: -250px bottom;
   }
   25% {
-    background: url(../img/pngwing.com.png) no-repeat -140px center;
+    background: url(../img/pngwing.com.png) no-repeat -250px center;
   }
   50% {
-    background: url(../img/pngwing.com.png) no-repeat -140px top;
+    background: url(../img/pngwing.com.png) no-repeat -250px top;
   }
   75% {
-    background: url(../img/pngwing.com.png) no-repeat -140px center;
+    background: url(../img/pngwing.com.png) no-repeat -250px center;
   }
   100% {
-    background: url(../img/pngwing.com.png) no-repeat -180px center;
+    background: url(../img/pngwing.com.png) no-repeat -250px center;
   }
 }
 @keyframes backdrop {
   0% {
-    background-position: -140px bottom;
+    background-position: -250px bottom;
   }
   25% {
-    background: url(../img/pngwing.com.png) no-repeat -140px center;
+    background: url(../img/pngwing.com.png) no-repeat -250px center;
   }
   50% {
-    background: url(../img/pngwing.com.png) no-repeat -140px top;
+    background: url(../img/pngwing.com.png) no-repeat -250px top;
   }
   75% {
-    background: url(../img/pngwing.com.png) no-repeat -140px center;
+    background: url(../img/pngwing.com.png) no-repeat -250px center;
   }
   100% {
-    background: url(../img/pngwing.com.png) no-repeat -180px center;
+    background: url(../img/pngwing.com.png) no-repeat -250px center;
   }
 }
 @-webkit-keyframes backdropOpacity {
   0% {
     opacity: 1;
-    background-position: -140px bottom;
+    background-position: -50px bottom;
   }
   100% {
     opacity: 0;
-    background: url(../img/pngwing.com.png) no-repeat -180px center;
+    background: url(../img/pngwing.com.png) no-repeat -140px center;
   }
 }
 @keyframes backdropOpacity {
   0% {
     opacity: 1;
-    background-position: -140px bottom;
+    background-position: -50px bottom;
   }
   100% {
     opacity: 0;
-    background: url(../img/pngwing.com.png) no-repeat -180px center;
+    background: url(../img/pngwing.com.png) no-repeat -140px center;
   }
 }
 .backdrop {
@@ -401,7 +409,7 @@ select {
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.8) url(../img/pngwing.com.png) no-repeat -140px top;
+  background: rgba(0, 0, 0, 0.8) url(../img/pngwing.com.png) no-repeat -250px top;
   -webkit-transform: scale(0);
           transform: scale(0);
   opacity: 0;
@@ -451,6 +459,11 @@ select {
   margin: 0px auto 0;
 }
 
+@media (max-width: 768px) and (max-height: 425px) {
+  .home-block {
+    padding: 20px 15px 32px;
+  }
+}
 /* Main screen end */
 /* Section Main Img start */
 .main-img {
