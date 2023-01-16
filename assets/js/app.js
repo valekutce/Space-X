@@ -7,6 +7,7 @@
     backdrop = document.querySelector('.backdrop'),
     mobileLinks = document.querySelectorAll('.header_nav ul.nav-items li.menu-item a');
 
+
     window.addEventListener('load', ()=> {
         setTimeout(()=> {
             backdrop.classList.remove('backdrop_active'); 
@@ -26,11 +27,13 @@
 
     window.addEventListener('scroll', function() {
         if (this.scrollY > 1) {
+            let headerHeight = header.offsetHeight;
+            console.log(headerHeight);
             header.classList.add('header_active');
-            fixedBlock.style.display = "block";
+            fixedBlock.style.height = headerHeight + "px";
         } else {
             header.classList.remove('header_active');
-            fixedBlock.style.display = "none";
+            fixedBlock.style.height = "0px";
         }
     });
 
@@ -45,11 +48,4 @@
         backdrop.classList.remove('backdrop_active');
         burg.style.display = 'block';
     });
-
-
-    // backdrop.addEventListener('click', () => {
-    //     backdrop.classList.remove('backdrop_active');
-    //     headerWrap.classList.remove('header_wrap_active');
-    //     burg.style.display = 'block';
-    // });
     
